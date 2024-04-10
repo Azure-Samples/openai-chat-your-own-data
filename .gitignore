@@ -9,7 +9,7 @@
 *.user
 *.userosscache
 *.sln.docstates
-
+.azure
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+.azure

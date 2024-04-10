@@ -1,57 +1,35 @@
 # Project Name
 
-(short, 1-3 sentenced, description of the project)
+This template provisions essential infrastructure for you to use Azure OpenAI with your own data. Visit the [OpenAI Use Your Data](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/azure-developer-cli) tutorial for details on how to combine this architecture setup with application code.
 
 ## Features
 
 This project framework provides the following features:
 
-* Feature 1
-* Feature 2
-* ...
+* Provisions an Azure OpenAI service
+* Provisions an Azure AI Search service
+* Configures essential connections between the OpenAI and AI Search service, such as creating indexes and managing permissions
 
 ## Getting Started
 
 ### Prerequisites
 
-(ideally very short, if any)
-
-- OS
-- Library version
-- ...
-
-### Installation
-
-(ideally very short)
-
-- npm install [package name]
-- mvn install
-- ...
+- [Azure Developer CLI](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd)
 
 ### Quickstart
-(Add steps to get up and running quickly)
 
-1. git clone [repository clone url]
-2. cd [repository name]
-3. ...
+To provision the template, open a terminal in an empty folder on your local computer and run the following commands:
 
+```azurecli
+azd init --template openai-chat-your-own-data
 
-## Demo
+azd auth login
 
-A demo app is included to show how to use the project.
+azd up
+```
 
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
+The provisioning process may take several minutes to complete.
 
 ## Resources
 
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
+- [Tutorial - Use Your Data with OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/
