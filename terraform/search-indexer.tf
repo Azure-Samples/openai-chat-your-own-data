@@ -4,9 +4,7 @@ locals {
     name            = local.indexer_name
     targetIndexName = local.search_index_name
     dataSourceName  = local.data_source_name
-    schedule = {
-      interval = "PT5M"
-    }
+    schedule        = { interval = "PT5M" }
   }
 }
 

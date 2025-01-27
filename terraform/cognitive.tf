@@ -21,9 +21,3 @@ resource "azurerm_cognitive_deployment" "main" {
     capacity = 20
   }
 }
-
-resource "random_string" "suffix" {
-  length  = 8
-  upper   = false
-  special = false
-}

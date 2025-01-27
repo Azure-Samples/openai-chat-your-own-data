@@ -3,46 +3,13 @@ locals {
   index_definition = {
     name = local.search_index_name
     fields = [
-      {
-        name        = "id",
-        type        = "Edm.String",
-        key         = true,
-        retrievable = true,
-        filterable  = true,
-        sortable    = true
-      },
-      {
-        name        = "content",
-        type        = "Edm.String",
-        searchable  = true,
-        retrievable = true
-      },
-      {
-        name        = "filepath",
-        type        = "Edm.String",
-        retrievable = true
-      },
-      {
-        name        = "title",
-        type        = "Edm.String",
-        searchable  = true,
-        retrievable = true
-      },
-      {
-        name        = "url",
-        type        = "Edm.String",
-        retrievable = true
-      },
-      {
-        name        = "chunk_id",
-        type        = "Edm.String",
-        retrievable = true
-      },
-      {
-        name        = "last_updated",
-        type        = "Edm.String",
-        retrievable = true
-      }
+      { name = "id", type = "Edm.String", key = true, retrievable = true, filterable = true, sortable = true },
+      { name = "content", type = "Edm.String", searchable = true, retrievable = true },
+      { name = "filepath", type = "Edm.String", retrievable = true },
+      { name = "title", type = "Edm.String", searchable = true, retrievable = true },
+      { name = "url", type = "Edm.String", retrievable = true },
+      { name = "chunk_id", type = "Edm.String", retrievable = true },
+      { name = "last_updated", type = "Edm.String", retrievable = true }
     ]
   }
 }
