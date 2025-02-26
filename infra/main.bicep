@@ -12,10 +12,17 @@ param environmentName string
 @minLength(1)
 @description('Primary location for all resources')
 param location string
-param azureOpenAIChatGptModelVersion string ='0613'
 @description('Primary location for all resources')
 param principalId string
-param chatGptDeploymentCapacity int = 10
+
+// Parameters for deploying an Azure OpenAI model
+// Change these paramters if you want to deploy a different model
+param azureOpenAIChatGptDeploymentName string = 'gpt-4o-mini' // The deployment name for the model. 
+param azureOpenAIChatGptModelName string = 'gpt-4o-mini' // The designated name/type of the model to be deployed.
+param azureOpenAIChatGptModelVersion string ='2024-07-18' // the model version
+// If you get a quota/capacity error, you may need to adjust the following capacity param based on the value listed in the generated error message
+param chatGptDeploymentCapacity int = 8 // The capacity value. 
+
 param searchIndexName string = '${environmentName}index'
 // Optional parameters to override the default azd resource naming conventions.
 // Add the following to main.parameters.json to provide values:
@@ -63,10 +70,10 @@ module azureOpenAi 'core/ai/cognitiveservices.bicep' = {
       name: 'S0'
     }
     deployments: [{
-      name: 'gpt-35-turbo-16k'
+      name: azureOpenAIChatGptDeploymentName
       model: {
         format: 'OpenAI'
-        name: 'gpt-35-turbo-16k'
+        name: azureOpenAIChatGptModelName
         version: azureOpenAIChatGptModelVersion
       }
       sku: {
@@ -145,4 +152,3 @@ output AZURE_OPENAI_DEPLOYMENT_NAME string = azureOpenAi.outputs.deploymentName
 output AZURE_AI_SEARCH_ENDPOINT string = searchService.outputs.endpoint
 output AZURE_AI_SEARCH_API_KEY string = searchService.outputs.key
 output AZURE_AI_SEARCH_INDEX string = searchIndexName
-
