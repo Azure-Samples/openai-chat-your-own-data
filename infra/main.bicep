@@ -17,8 +17,8 @@ param principalId string
 
 // Parameters for deploying an Azure OpenAI model
 // Change these paramters if you want to deploy a different model
-param azureOpenAIChatGptDeploymentName string = 'gpt-4o-mini' // The name for the model's deployment. 
-param azureOpenAIChatGptModelName string = 'gpt-4o-mini' // The Name/type of the model to be be deployed.
+param azureOpenAIChatGptDeploymentName string = 'gpt-4o-mini' // The deployment name for the model. 
+param azureOpenAIChatGptModelName string = 'gpt-4o-mini' // The designated name/type of the model to be deployed.
 param azureOpenAIChatGptModelVersion string ='2024-07-18' // the model version
 // If you get a quota/capacity error, you may need to adjust this capacity param based on the value listed in the generated error message
 param chatGptDeploymentCapacity int = 8 // The capacity value. 
